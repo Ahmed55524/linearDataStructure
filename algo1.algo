@@ -1,0 +1,24 @@
+ALGORITHM same_somme
+VAR
+    arr_1, arr_2 : ARRAY_OF_INTEGER
+    i,j,ss : INTEGER
+BEGIN
+    Read(arr_1)
+    Read(arr_2)
+    ss:=0
+    FOR i FROM 0 TO arr_1.length-1 STEP 1  DO
+        FOR j FROM 0 TO arr_2.length-1 STEP 1 DO
+            IF (arr_1[i]<>arr_2[j]) THEN
+                ss:=ss + arr_1[i]
+            END_IF
+        END_FOR
+    END_FOR
+    FOR i FROM 0 TO arr_2.length-1 STEP 1  DO
+        FOR j FROM 0 TO arr_1.length-1 STEP 1 DO
+            IF (arr_1[i]<>arr_2[j]) THEN
+                ss:=ss + arr_2[i]
+            END_IF
+        END_FOR
+    END_FOR
+    Write("The sum of inequal numbers is",ss)
+END
